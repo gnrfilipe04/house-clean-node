@@ -1,14 +1,12 @@
 import express from "express";
 
-import { createFtpServer } from "./utils/FtpServer";
+import { initialize } from "./database/initialize";
+import { router } from "./routes";
 
 const app = express();
+app.use(express.json());
+app.use(router);
 
-createFtpServer({
-    host: "ftp://10.0.0.107:4444",
-    root: "C:/Users/Acer/Desktop/Filipe/ftp-server/src/tmp"
-});
-
-app.listen(3333, () => {
-    console.log("Server is running...");
+app.listen(3333, async () => {
+    await initialize();
 });
