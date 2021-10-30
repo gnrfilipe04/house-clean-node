@@ -1,6 +1,6 @@
 import { Request, Response, Router } from "express";
 
-import { createController } from "../modules/houses/useCases/create";
+import { createController } from "../../../../modules/houses/useCases/create";
 
 const houseRoutes = Router();
 

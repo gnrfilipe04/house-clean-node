@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 
-import { CreateUseCase } from "./CreateUseCase";
+import { CreateHouseUseCase } from "./CreateHouseUseCase";
 
-class CreateController {
-    constructor(private createUseCase: CreateUseCase) {}
+class CreateHouseController {
+    constructor(private createUseCase: CreateHouseUseCase) {}
     async handle(request: Request, response: Response): Promise<Response> {
         const { body } = request;
         await this.createUseCase.execute(body);
@@ -11,4 +11,4 @@ class CreateController {
     }
 }
 
-export { CreateController };
+export { CreateHouseController };

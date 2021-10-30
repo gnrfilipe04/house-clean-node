@@ -1,9 +1,9 @@
 import { HouseRepository } from "../../repositories/implementations/HouseRepository";
-import { CreateController } from "./CreateController";
-import { CreateUseCase } from "./CreateUseCase";
+import { CreateHouseController } from "./CreateHouseController";
+import { CreateHouseUseCase } from "./CreateHouseUseCase";
 
 const houseRepository = new HouseRepository();
-const createUseCase = new CreateUseCase(houseRepository);
-const createController = new CreateController(createUseCase);
+const createUseCase = new CreateHouseUseCase(houseRepository);
+const createController = new CreateHouseController(createUseCase);
 
 export { createController };

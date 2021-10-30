@@ -1,6 +1,6 @@
 import express from "express";
 
-import { initialize } from "./database/initialize";
+import { initialize } from "../../../database/initialize";
 import { router } from "./routes";
 
 const app = express();

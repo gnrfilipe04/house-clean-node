@@ -4,7 +4,7 @@ import { HouseRepositoryInMemory } from "../../repositories/in-memory/HouseRepos
 
 let houseRepositoryInMemory: HouseRepositoryInMemory;
 
-describe("Create House", () => {
+describe("Houses", () => {
     beforeEach(() => {
         houseRepositoryInMemory = new HouseRepositoryInMemory();
     });
