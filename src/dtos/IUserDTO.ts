@@ -8,3 +8,5 @@ interface IUserDTO {
     password: string;
     created_at?: Date;
 }
+
+export { IUserDTO };

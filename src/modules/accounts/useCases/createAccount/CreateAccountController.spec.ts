@@ -1,5 +1,6 @@
 import { v4 as uuidV4 } from "uuid";
 
+import { AppError } from "../../../../shared/errors/AppError";
 import { AccountsRepositoryInMemory } from "../../repositories/in-memory/AccountsRepositoryInMemory";
 
 let accountsRepositoryInMemory: AccountsRepositoryInMemory;
@@ -37,5 +38,29 @@ describe("Accounts", () => {
         const accounts = await accountsRepositoryInMemory.list();
 
         expect(accounts).toEqual(expect.arrayContaining([account]));
+    });
+
+    it("should not be able create a new account if the email already exists", async () => {
+        await accountsRepositoryInMemory.create({
+            id: uuidV4(),
+            admin: false,
+            email: "test@test.com",
+            name: "Test 1",
+            password: "1234",
+            adress: "Test Adress",
+            phone: "55 998874555",
+        });
+
+        expect(async () => {
+            await accountsRepositoryInMemory.create({
+                id: uuidV4(),
+                admin: false,
+                email: "test@test.com",
+                name: "Test 2",
+                password: "1234",
+                adress: "Test Adress",
+                phone: "55 998874555",
+            });
+        }).rejects.toBeInstanceOf(AppError);
     });
 });

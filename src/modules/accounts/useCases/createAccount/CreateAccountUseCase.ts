@@ -1,5 +1,6 @@
 import { hash } from "bcryptjs";
 
+import { IUserDTO } from "../../../../dtos/IUserDTO";
 import { AppError } from "../../../../shared/errors/AppError";
 import { User } from "../../entities/User";
 import { AccountsRepository } from "../../repositories/implementations/AccountsRepository";
