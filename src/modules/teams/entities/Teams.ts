@@ -1,8 +1,8 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
-@Entity("users")
-class User {
+@Entity("teams")
+class Team {
     @PrimaryColumn()
     id: string;
 
@@ -10,22 +10,7 @@ class User {
     name: string;
 
     @Column()
-    phone?: string;
-
-    @Column()
-    adress?: string;
-
-    @Column()
-    admin: boolean;
-
-    @Column()
-    email: string;
-
-    @Column()
-    team: string;
-
-    @Column()
-    password: string;
+    description?: string;
 
     @CreateDateColumn()
     created_at: Date;
@@ -37,4 +22,4 @@ class User {
     }
 }
 
-export { User };
+export { Team };

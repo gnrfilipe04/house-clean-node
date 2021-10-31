@@ -6,7 +6,7 @@ class CreateAccountController {
     constructor(private createAccountUseCase: CreateAccountUseCase) {}
 
     async handle(request: Request, response: Response): Promise<Response> {
-        const { id, name, phone, adress, admin, email, password } =
+        const { id, name, phone, adress, admin, email, password, team } =
             request.body;
 
         await this.createAccountUseCase.execute({
@@ -17,6 +17,7 @@ class CreateAccountController {
             admin,
             email,
             password,
+            team,
         });
 
         return response.status(201).json({
@@ -26,6 +27,7 @@ class CreateAccountController {
             adress,
             admin,
             email,
+            team,
         });
     }
 }

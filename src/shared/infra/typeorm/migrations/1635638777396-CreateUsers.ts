@@ -36,6 +36,10 @@ export class CreateUsers1635638777396 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
+                        name: "team",
+                        type: "uuid",
+                    },
+                    {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()",

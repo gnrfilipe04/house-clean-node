@@ -7,6 +7,7 @@ interface IUserDTO {
     email: string;
     password: string;
     created_at?: Date;
+    team: string;
 }
 
 export { IUserDTO };
