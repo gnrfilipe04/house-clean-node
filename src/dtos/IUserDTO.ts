@@ -6,4 +6,5 @@ interface IUserDTO {
     admin: boolean;
     email: string;
     password: string;
+    created_at?: Date;
 }

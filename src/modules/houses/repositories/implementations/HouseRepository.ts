@@ -1,4 +1,3 @@
-import { House } from "../../../../database/models/house";
 import { IHouseDTO } from "../../../../dtos/IHouseDTO";
 import { IHouseRepository } from "../IHouseRepository";
 
@@ -9,8 +8,6 @@ class HouseRepository implements IHouseRepository {
             adress,
             description,
         };
-
-        await House.create(house);
 
         return house;
     }
